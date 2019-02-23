@@ -41,6 +41,14 @@ $this->need('header-post.php');
         </div>
 
     </div>
+    <blockquote class="copy">
+<p><strong>本作品采用 <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" target="_blank">知识共享署名-相同方式共享 4.0 国际许可协议</a> 进行许可。
+<br> 
+This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0 International License</a> .</strong>
+<br>
+<strong>本文链接：</strong><a href="<?php $this->permalink() ?>"><?php $this->permalink() ?></a>
+</p>
+</blockquote>
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- after-post -->
 <ins class="adsbygoogle"
