@@ -70,10 +70,11 @@ $(function(){
     <div class="blog-text-center"> 
     <a href="https://pro.llf0703.com/" target="_blank">项目</a> | 
     <a href="https://2018.llf0703.com/" target="_blank">2018</a> | 
-    <a href="https://about.llf0703.com" target="_blank">关于</a> <br> 
+    <a href="https://about.llf0703.com" target="_blank">关于</a> |
+    <a href="/sitemap.xml">Site Map</a> <br> 
     &copy; 2017-<?php echo date('Y'); ?>  <a href="<?php $this->options->siteUrl(); ?>"><?php $this->options->title() ?></a> <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license" target="_blank"> <img src="https://img.llf0703.com/by-sa.svg" alt="Creative Commons License"> </a> <br> 
     Powered by &nbsp;&nbsp;<a href="http://www.typecho.org" target="_blank"><img src="https://img.llf0703.com/typecho-logo.svg" class="footer-logo-typecho"></a> <a href="https://www.cloudflare.com" target="_blank"><img src="https://img.llf0703.com/cloudflare-logo.svg" class="footer-logo"></a><br>
-    加载耗时：<?php echo timer_stop();?>，服务器时间：<?php date_default_timezone_set("PRC");echo date("Y-m-d H:i:s");?> | <a href="/sitemap.xml">Site Map</a>
+    Load: <?php echo timer_stop();?> | Server Time: <?php date_default_timezone_set("PRC");echo date("Y-m-d H:i:s");?> | Build: <a href="https://github.com/Llf0703/llf0703.com/commit/b2de1f0467fcdceb0827c57ab0d71501a4ad4674" target="_blank">b2de1f0</a>
     </div>
 </footer>
 <script src="https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.js"></script>
