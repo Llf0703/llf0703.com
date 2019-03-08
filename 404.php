@@ -12,7 +12,7 @@ $this->need('nav.php');
                     <div class="site-heading">
                         <h1>404</h1>
                         <!-- <hr class="small"> -->
-                        <span class="subheading"><?php $this->options->description() ?></span>
+                        <!--<span class="subheading"><?php $this->options->description() ?></span>-->
                     </div>
                 </div>
             </div>

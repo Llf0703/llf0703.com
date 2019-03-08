@@ -45,5 +45,83 @@
 }
 
 .page-nav {
-    margin-top:2em;
+    margin:2em auto;
+}
+
+.copy {
+    margin-bottom: 2em;
+    padding: 0.5em 1em;
+    border-left: 3px solid #F44336;
+    background-color: #F5F5F5;
+    list-style: none;
+    font-family: Roboto,Noto,Helvetica,Arial,sans-serif;
+}
+
+.copy a {
+	text-decoration: underline;
+}
+
+@media only screen and (min-width:1170px) {
+
+	.navbar-custom.is-fixed .nav li a:hover, .navbar-custom.is-fixed .nav li a:focus {
+		color: black;
+	}
+
+	.navbar-custom.is-fixed .navbar-brand:hover, .navbar-custom.is-fixed .navbar-brand:focus {
+	    color: black;
+	}
+
+	.navbar-custom.is-fixed a , .navbar-custom a {
+		border-top: 4px solid transparent;
+	}
+
+	.navbar-custom.is-fixed .nav li a:hover {
+		border-color: #5f9fd6 !important;
+	}
+
+	.navbar-custom.is-fixed .nav li:hover {
+		background: #f8f8f8;
+	}
+
+	.navbar-custom.is-fixed {
+		box-shadow: 0 2px 4px -1px rgba(0,0,0,.2),0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12);
+	}
+
+	.navbar-custom:hover {
+		background-color: #ffffff;
+	}
+
+	.navbar-custom:hover a{
+		color:#404040!important;
+	}
+
+	.navbar-custom:hover .nav li a:hover, .navbar-custom.is-fixed .nav li a:focus {
+		color: black;
+	}
+
+	.navbar-custom:hover .navbar-brand:hover, .navbar-custom.is-fixed .navbar-brand:focus {
+	    color: black;
+	}
+
+	.navbar-custom:hover .nav li a:hover {
+		border-color: #5f9fd6 !important;
+	}
+
+	.navbar-custom:hover .nav li:hover {
+		background: #f8f8f8;
+	}
+
+	.navbar-custom:hover {
+		box-shadow: 0 2px 4px -1px rgba(0,0,0,.2),0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12);
+	}
+
+	.nav-active {
+		border-color: #ed5f82 !important;
+	}
+}
+
+@media only screen and (max-width:1024px) {
+	.sidebar {
+		display:none;
+	}
 }

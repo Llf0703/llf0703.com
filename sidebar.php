@@ -1,6 +1,5 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
-<div class="am-u-lg-4 am-u-sm-10 am-u-lg-offset-0 am-u-sm-offset-0 sidebar-container">
-    <section>
+<div class="sidebar mdui-col-md-4">
         <div class="sidebar-header">
             <span class="sidebar-header-title">
                 分类列表
@@ -12,7 +11,7 @@
         ->parse('<li class="sidebar-list-item"><a href="{permalink}" title="{description}">{name}  ({count})</a></li>'); ?>
         </ul>
         </div>
-    </section>
+    </div>
     <section>
         <div class="sidebar-header">
             <span class="sidebar-header-title">

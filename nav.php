@@ -8,7 +8,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="<?php $this->options->siteUrl(); ?>"><?php $this->options->title(); ?></a>
+            <a class="navbar-brand" href="<?php $this->options->siteUrl(); ?>">Llf0703</a>
             <?php if($this->options->searchPage): ?>
                 <a class="navbar-mobile-search" href="<?php $this->options->searchPage(); ?>">
                     <span class="am-icon-search"></span>
@@ -19,7 +19,10 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div id="huxblog_navbar">
             <div class="navbar-collapse">
-<ul class="nav navbar-nav">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="<?php $this->options->siteUrl(); ?>" class="nav-active">博客</a>
+                    </li>
                     <li>
                         <a href="https://pro.llf0703.com/" target="_blank">项目</a>
                     </li>

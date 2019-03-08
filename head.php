@@ -19,7 +19,7 @@
     <!-- AmazeUI 3.0 -->
     <link rel="stylesheet" href="<?php $this->options->themeUrl('css/amazeui.min.css'); ?>">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="<?php $this->options->themeUrl('css/customui.min.css'); ?>">
+    <link rel="stylesheet" href="<?php $this->options->themeUrl('css/customui.css'); ?>">
     <link rel="stylesheet" href="<?php $this->options->themeUrl('css/main.css'); ?>">
     <!-- FontAwesome -->
     <link href="https://lib.baomitu.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -58,6 +58,4 @@
     <?php $this->header(); ?>
 </head>
 
-<body class="mdui-theme-primary-indigo mdui-theme-accent-pink">
-
-<a class="mdui-fab mdui-fab-fixed mdui-ripple mdui-color-theme-accent fab-fixed" href="#"><i class="mdui-icon material-icons">arrow_upward</i></a>
+<body class="mdui-theme-white mdui-theme-accent-indigo">

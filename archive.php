@@ -1,65 +1,56 @@
+<!--Remove amazeui done-->
+
 <?php
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 $this->need('head.php');
 $this->need('nav.php');
-$this->need('header-index.php');
+$this->need('header-archive.php');
 ?>
 
 <!-- content srart -->
-<div class="am-g am-g-fixed blog-fixed">
-    <div class="am-u-md-12 am-u-sm-12">
-        <h2 class="am-margin-top-lg"><?php $this->archiveTitle(array(
-                'category'  =>  _t('分类 %s 下的文章'),
-                'search'    =>  _t('包含关键字 %s 的文章'),
-                'tag'       =>  _t('标签 %s 下的文章'),
-                'author'    =>  _t('%s 发布的文章')
-            ), '', ''); ?></h2>
-        <?php if ($this->have()): ?>
-        <?php while($this->next()): ?>
-        <article class="am-g blog-entry-article">
-            <div class="am-u-lg-6 am-u-lg-12 am-u-sm-12 blog-entry-text post-preview">
-                <div class="topic-header">
-                    <div class="pull-left">
-                        <div class="blog-flex-center">
-                            <div class="blog-flex0">
-                                <img src="<?php $this->options->avatarUrl(); ?>" alt="" class="link avatar avatar-image">
-                            </div>
-                            <div class="author-lockup blog-flex1">
-                                <a class="link" href="<?php $this->author->permalink(); ?>"><?php $this->author(); ?></a>
-                                <span class="in">in</span>
-                                <span class="category-name">
-                                    <?php $this->category('  '); ?>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                <span class="pull-right time pc_time"><?php $this->date('F j, Y'); ?></span>
+<div class="mdui-container">
+    <div class="mdui-row">
+        <div class="mdui-col-md-8 mdui-col-sm-12">
+            <?php if ($this->have()): ?>
+            <?php while($this->next()): ?>
+            <div class="mdui-card card-fixed mdui-hoverable">
+
+                <div class="mdui-card-primary">
+                  <a class="mdui-card-primary-title title-fixed" href="<?php $this->permalink() ?>"><?php $this->title() ?></a>
                 </div>
-            <h1 class="post-index-title">
-                <a itemtype="url" href="<?php $this->permalink() ?>"><?php $this->title() ?></a>
-                <?php if ($this->category=='sol'):?>
-                    <?php $this->need('luogu.php')?>
-                <?php endif;?>
-            </h1>
-            <div class="post-content-preview">
-                <?php $this->excerpt(200, '...'); ?>
+
+                <div class="mdui-card-content nokatex"><?php $this->excerpt(200, '...'); ?></div>
+
+                <div class="mdui-card-actions">
+                    <span class="more"><i class="fa fa-calendar"></i> <time datetime="<?php $this->date('c'); ?>" itemprop="datePublished"><?php $this->date('Y-m-d'); ?></time> &nbsp;&nbsp; <i class="fa fa-tags"></i> <?php $this->category('  '); ?> &nbsp;&nbsp; <a href="<?php $this->permalink() ?>#comments"><i class="fa fa-fw fa-comment"></i> <?php $this->commentsNum('%d 条评论'); ?></a></span>
+                    <div class="mdui-float-right"><?php if ($this->category == 'sol'): ?><?php $this->need('luogu.php') ?><?php endif; ?></div>
+                </div>
+  
             </div>
-            <div class="clearfix topic-footer">
-                <span class="pull-left time mobile_time"><?php $this->date('F j, Y'); ?></span>
+            <?php endwhile; ?>
+            <?php else: ?>
+            <div class="mdui-card card-fixed mdui-hoverable">
+
+                <div class="mdui-card-primary">
+                  <a class="mdui-card-primary-title title-fixed" href="#">咕咕咕～</a>
+                </div>
+
+                <div class="mdui-card-content nokatex">蒟蒻Llf0703咕咕了，没准以后会添加呢</div>
+
+                <div class="mdui-card-actions">
+                    <span class="more"><i class="fa fa-calendar"></i> 在写了，快了 &nbsp;&nbsp; <i class="fa fa-tags"></i> 鸽子 &nbsp;&nbsp; <a href="#"><i class="fa fa-fw fa-comment"></i>没有评论</a></span>
+                    <div class="mdui-float-right"><?php if ($this->category == 'sol'): ?><?php $this->need('luogu.php') ?><?php endif; ?></div>
+                </div>
+  
             </div>
-        </article>
-        <?php endwhile; ?>
-        <?php else: ?>
-            <article class="am-g blog-entry-article am-text-center">
-                <?php _e('没有找到内容'); ?>
-            </article>
-        <?php endif; ?>
-        <ul class="am-pagination">
-            <?php $this->pageLink('&laquo; Prev','prev');?>
-            <?php $this->pageLink('Next &raquo;','next');?>
-        </ul>
+            <?php endif; ?>
+            <div class="page-nav">
+                <div class="prev-page mdui-col-xs-6"><?php $this->pageLink('<button class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon material-icons">&#xe5c4;</i></button>'); ?></div>
+                <div class="next-page mdui-col-xs-6"><?php $this->pageLink('<button class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon material-icons">&#xe5c8;</i></button>', 'next'); ?></div>
+            </div>
+        </div>
+        <?php $this->need('sidebar.php'); ?>
     </div>
 </div>
-<!-- content end -->
 
 <?php $this->need('footer.php'); ?>

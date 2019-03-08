@@ -455,16 +455,8 @@ input::-webkit-input-placeholder {
 		color: #404040
 	}
 
-	.navbar-custom.is-fixed .navbar-brand:hover,.navbar-custom.is-fixed .navbar-brand:focus {
-		color: #0085a1
-	}
-
 	.navbar-custom.is-fixed .nav li a {
 		color: #404040
-	}
-
-	.navbar-custom.is-fixed .nav li a:hover,.navbar-custom.is-fixed .nav li a:focus {
-		color: #0085a1
 	}
 
 	.navbar-custom.is-visible {
@@ -492,8 +484,8 @@ input::-webkit-input-placeholder {
 
 	.navbar-custom.is-fixed {
 		position: fixed;
-		top: -61px;
-		background-color: rgba(255,255,255,.9);
+		top: -65px;
+		background-color: rgba(255,255,255);
 		border-bottom: 1px solid #f2f2f2;
 		-webkit-transition: -webkit-transform .3s;
 		-moz-transition: -moz-transform .3s;
@@ -505,7 +497,7 @@ input::-webkit-input-placeholder {
 	}
 
 	.navbar-custom.is-fixed .navbar-brand:hover,.navbar-custom.is-fixed .navbar-brand:focus {
-		color: #0085a1
+		color: #2479cc
 	}
 
 	.navbar-custom.is-fixed .nav li a {
@@ -513,7 +505,7 @@ input::-webkit-input-placeholder {
 	}
 
 	.navbar-custom.is-fixed .nav li a:hover,.navbar-custom.is-fixed .nav li a:focus {
-		color: #0085a1
+		color: #2479cc
 	}
 
 	.navbar-custom.is-visible {
@@ -773,7 +765,7 @@ input::-webkit-input-placeholder {
 }
 
 .sidebar-container .tags a:hover {
-	color: #0085a1!important
+	color: #2479cc!important
 }
 
 .sidebar-container .tags a {
@@ -781,7 +773,7 @@ input::-webkit-input-placeholder {
 }
 
 .sidebar-container .tags a:hover,.sidebar-container .tags a:active {
-	border-color: #0085a1
+	border-color: #2479cc
 }
 
 .sidebar-container .list-inline>li {
@@ -1090,10 +1082,6 @@ input::-webkit-input-placeholder {
 	}
 }
 
-.post-content-preview:hover {
-	color: #42b983
-}
-
 .list-inline {
 	padding-left: 0;
 	margin-left: -5px;
@@ -1151,20 +1139,20 @@ footer .list-inline {
 
 .pager li>a:hover,.pager li>a:focus {
 	color: white;
-	background-color: #0085a1;
-	border: 1px solid #0085a1
+	background-color: #2479cc;
+	border: 1px solid #2479cc
 }
 
 ::-moz-selection {
 	color: white;
 	text-shadow: none;
-	background: #0085a1
+	background: #2479cc
 }
 
 ::selection {
 	color: white;
 	text-shadow: none;
-	background: #0085a1
+	background: #2479cc
 }
 
 img::selection {
