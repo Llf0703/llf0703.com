@@ -26,9 +26,6 @@
                     <li>
                         <a href="https://pro.llf0703.com/" target="_blank">项目</a>
                     </li>
-                    <li>
-                        <a href="https://about.llf0703.com/" target="_blank">关于</a>
-                    </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <?php $this->widget('Widget_Contents_Page_List')->to($pages); ?>

@@ -65,7 +65,7 @@ $comments->alt(' comment-odd', ' comment-even');
 </li>
 <?php } ?>
 
-<div id="<?php $this->respondId(); ?>" class="comment-container">
+<div id="<?php $this->respondId(); ?>">
     <div id="comments" class="clearfix">
         <?php $this->comments()->to($comments); ?>
         <?php if($this->allow('comment')): ?>

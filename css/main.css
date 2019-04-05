@@ -1,15 +1,3 @@
-#no-ad {
-	line-height: 28px;
-	color: #8590a6;
-	text-align: center;
-	background-color: #ebebeb;
-	margin-bottom: 20px
-}
-
-#no-ad a {
-	text-decoration: underline
-}
-
 .footer-logo {
 	height: 32px
 }
@@ -36,16 +24,12 @@
 	margin-left: 8px
 }
 
-.fab-fixed {
-	z-index: 999;
-}
-
 .next-page {
     text-align: right;
 }
 
 .page-nav {
-    margin:2em auto;
+    margin-top:2em;
 }
 
 .copy {
@@ -61,7 +45,7 @@
 	text-decoration: underline;
 }
 
-@media only screen and (min-width:1170px) {
+@media only screen and (min-width:1024px) {
 
 	.navbar-custom.is-fixed .nav li a:hover, .navbar-custom.is-fixed .nav li a:focus {
 		color: black;
@@ -85,10 +69,12 @@
 
 	.navbar-custom.is-fixed {
 		box-shadow: 0 2px 4px -1px rgba(0,0,0,.2),0 4px 5px 0 rgba(0,0,0,.14),0 1px 10px 0 rgba(0,0,0,.12);
+		text-shadow: none;
 	}
 
 	.navbar-custom:hover {
 		background-color: #ffffff;
+		text-shadow: none;
 	}
 
 	.navbar-custom:hover a{
@@ -120,8 +106,41 @@
 	}
 }
 
-@media only screen and (max-width:1024px) {
-	.sidebar {
-		display:none;
+.blog-article {
+	margin-top:1em;
+}
+
+.blog-content {
+	margin-top:1em;
+}
+
+@media only screen and (max-width:600px) {
+	.blog-content {
+		margin-left:1em !important;
 	}
+}
+
+.header-title {
+	text-shadow: 2px 2px 4px black;
+}
+
+.header-more {
+	text-shadow: 1px 1px 2px black;
+}
+
+.mdui-fab-wrapper .mdui-fab-dial {
+	bottom:56px;
+}
+
+.mdui-fab {
+	color:#fff !important;
+}
+
+pre {
+	background: #fff;
+	box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
+	margin: 1rem 0;
+	padding: 1em 1em;
+	border-radius: .28571429rem;
+	border: 1px solid rgba(34,36,38,.15);
 }

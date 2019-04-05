@@ -1,19 +1,12 @@
 <div id="pjax">
-    <header class="intro-header" style="background-image: url('<?php $this->options->backgroundImage();?>')">
-        <div class="container">
-            <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                        <div class="post-heading">
-                            <h1>
-                                <?php $this->title() ?>
-                                <?php if ($this->category=='sol'):?>
-                                <?php $this->need('luogu.php')?>
-                                <?php endif;?>
-                            </h1>
-                            <span class="meta">@<?php $this->author(); ?> &nbsp;<?php $this->date('F j, Y'); ?></span>
-                            <div class="tags post-tags"><?php $this->category('  '); ?>&nbsp;</div>
-                        </div>
-                    </div>
+    <header class="intro-header" style="background-image: url('<?php $this->options->backgroundImage();?>');">
+        <div class="mdui-container">
+            <div class="post-heading">
+                <h1 class="header-title">
+                    <?php $this->title() ?>
+                </h1>
+                <div class="header-more"><i class="fa fa-calendar"></i> <time datetime="<?php $this->date('c'); ?>" itemprop="datePublished"><?php $this->date('Y-m-d'); ?></time> &nbsp;&nbsp; <i class="fa fa-tags"></i> <?php $this->category('  '); ?> &nbsp;&nbsp; <a href="<?php $this->permalink() ?>#comments"><i class="fa fa-fw fa-comment"></i> <?php $this->commentsNum('%d 条评论'); ?></a>
+                &nbsp;&nbsp; <?php if ($this->category=='sol'):?><?php $this->need('luogu.php')?><?php endif;?></div>
             </div>
         </div>
     </header>

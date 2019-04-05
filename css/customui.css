@@ -4,13 +4,9 @@ a {
 
 a:hover,a:focus {
 	outline: 0;
-	color: #2479cc;
+	color: #3273dc;
 	text-decoration: none;
 	cursor: pointer
-}
-
-#blog {
-	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Ubuntu,"Helvetica Neue",Helvetica,Arial,"PingFang SC","Hiragino Sans GB","Microsoft YaHei UI","Microsoft YaHei","Source Han Sans CN",sans-serif!important
 }
 
 #blog hr {
@@ -20,27 +16,6 @@ a:hover,a:focus {
 .blog-text-center {
 	text-align: center;
 	font-size: 14px
-}
-
-@media only screen and (min-width:1200px) {
-	.blog-fixed {
-		max-width: 1200px
-	}
-}
-
-.blog-entry-article {
-	margin: 3rem 0;
-	padding-bottom: 3rem;
-	border-bottom: 1px solid #e5e5e5
-}
-
-.blog-entry-text {
-	padding: 0 1rem
-}
-
-.blog-entry-text h1 {
-	margin-top: 0;
-	color: #2d2d2f
 }
 
 .blog-footer {
@@ -56,10 +31,6 @@ a:hover,a:focus {
 
 .blog-footer span {
 	color: #fff
-}
-
-.blog-article-p {
-	margin: 3rem 0
 }
 
 @media only screen and (max-width:767px) {
@@ -84,7 +55,7 @@ a:hover,a:focus {
 	-moz-background-size: cover;
 	background-size: cover;
 	-o-background-size: cover;
-	margin-bottom: 30px
+	margin-bottom: 30px;
 }
 
 .intro-header .site-heading,.intro-header .post-heading {
@@ -98,6 +69,10 @@ a:hover,a:focus {
 	}
 }
 
+.post-heading a {
+	color:white;
+}
+
 .intro-header .site-heading {
 	text-align: center
 }
@@ -105,15 +80,6 @@ a:hover,a:focus {
 .intro-header .site-heading h1 {
 	margin-top: 0;
 	font-size: 50px
-}
-
-.intro-header .site-heading .subheading {
-	font-size: 24px;
-	line-height: 1.1;
-	display: block;
-	font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
-	font-weight: 300;
-	margin: 10px 0 0
 }
 
 @media only screen and (min-width:768px) {
@@ -124,18 +90,6 @@ a:hover,a:focus {
 
 .intro-header .post-heading h1 {
 	font-size: 35px
-}
-
-.intro-header .post-heading .meta {
-	line-height: 1.1;
-	display: block
-}
-
-.intro-header .post-heading .meta {
-	font-family: 'Lora','Times New Roman',serif;
-	font-style: italic;
-	font-weight: 300;
-	font-size: 20px
 }
 
 @media only screen and (min-width:768px) {
@@ -264,120 +218,6 @@ input::-webkit-input-placeholder {
 @media only screen and (min-width:768px) {
 	.tags a {
 		margin-right: 5px
-	}
-}
-
-@media only screen and (max-width:767px) {
-	.navbar-default .navbar-collapse {
-		position: absolute;
-		right: 0;
-		border: 0;
-		background: white;
-		box-shadow: 0 5px 10px 2px rgba(0,0,0,.2);
-		box-shadow: rgba(0,0,0,.117647) 0 1px 6px,rgba(0,0,0,.239216) 0 1px 4px;
-		border-radius: 2px;
-		width: 170px
-	}
-
-	#huxblog_navbar a {
-		font-size: 13px;
-		line-height: 28px
-	}
-
-	#huxblog_navbar .navbar-collapse {
-		height: 0;
-		transform: scaleY(0);
-		transform-origin: top right;
-		transition: transform 400ms cubic-bezier(0.32,1,.23,1) 0ms;
-		-webkit-transform: scaleY(0);
-		-webkit-transform-origin: top right;
-		-webkit-transition: -webkit-transform 400ms cubic-bezier(0.32,1,.23,1) 0ms
-	}
-
-	#huxblog_navbar li {
-		opacity: 0;
-		transition: opacity 100ms cubic-bezier(0.23,1,.32,1) 0ms;
-		-webkit-transition: opacity 100ms cubic-bezier(0.23,1,.32,1) 0ms
-	}
-}
-
-.navbar-custom {
-	background: 0;
-	border: 0;
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	z-index: 3;
-	font-family: -apple-system,BlinkMacSystemFont,"Helvetica Neue","Arial","PingFang SC","Hiragino Sans GB","STHeiti","Microsoft YaHei","Microsoft JhengHei","Source Han Sans SC","Noto Sans CJK SC","Source Han Sans CN","Noto Sans SC","Source Han Sans TC","Noto Sans CJK TC","WenQuanYi Micro Hei",SimSun,sans-serif;
-	line-height: 1.7
-}
-
-.navbar-custom .navbar-brand {
-	font-weight: 800;
-	color: white;
-	height: 56px;
-	line-height: 25px
-}
-
-.navbar-custom .navbar-brand:hover {
-	color: rgba(255,255,255,.8)
-}
-
-.navbar-custom .nav li a {
-	text-transform: uppercase;
-	font-size: 16px;
-	line-height: 20px;
-	font-weight: 800;
-	letter-spacing: 1px
-}
-
-.navbar-custom .nav li a:active {
-	background: rgba(0,0,0,.12)
-}
-
-@media only screen and (min-width:768px) {
-	.navbar-custom {
-		background: transparent;
-		border-bottom: 1px solid transparent
-	}
-
-	.navbar-custom .navbar-brand {
-		color: white;
-		padding: 20px;
-		line-height: 20px
-	}
-
-	.navbar-custom .navbar-brand:hover,.navbar-custom .navbar-brand:focus {
-		color: rgba(255,255,255,.8)
-	}
-
-	.navbar-custom .nav li a {
-		color: white;
-		padding: 20px
-	}
-
-	.navbar-custom .nav li a:hover,.navbar-custom .nav li a:focus {
-		color: rgba(255,255,255,.8)
-	}
-
-	.navbar-custom .nav li a:active {
-		background: 0
-	}
-}
-
-@media only screen and (min-width:1170px) {
-	.navbar-custom {
-		-webkit-transition: background-color .3s;
-		-moz-transition: background-color .3s;
-		transition: background-color .3s;
-		-webkit-transform: translate3d(0,0,0);
-		-moz-transform: translate3d(0,0,0);
-		-ms-transform: translate3d(0,0,0);
-		-o-transform: translate3d(0,0,0);
-		transform: translate3d(0,0,0);
-		-webkit-backface-visibility: hidden;
-		backface-visibility: hidden
 	}
 }
 
@@ -912,7 +752,6 @@ input::-webkit-input-placeholder {
 	left: 0;
 	width: 100%;
 	z-index: 3;
-	font-family: -apple-system,BlinkMacSystemFont,"Helvetica Neue","Arial","PingFang SC","Hiragino Sans GB","STHeiti","Microsoft YaHei","Microsoft JhengHei","Source Han Sans SC","Noto Sans CJK SC","Source Han Sans CN","Noto Sans SC","Source Han Sans TC","Noto Sans CJK TC","WenQuanYi Micro Hei",SimSun,sans-serif;
 	line-height: 1.7
 }
 
@@ -1025,16 +864,6 @@ input::-webkit-input-placeholder {
 	font-size: 50px
 }
 
-.intro-header .site-heading .subheading {
-	font-family: -apple-system,BlinkMacSystemFont,"Helvetica Neue","Arial","PingFang SC","Hiragino Sans GB","STHeiti","Microsoft YaHei","Microsoft JhengHei","Source Han Sans SC","Noto Sans CJK SC","Source Han Sans CN","Noto Sans SC","Source Han Sans TC","Noto Sans CJK TC","WenQuanYi Micro Hei",SimSun,sans-serif;
-	line-height: 1.7;
-	font-size: 24px;
-	line-height: 1.1;
-	display: block;
-	font-weight: 300;
-	margin: 10px 0 0
-}
-
 @media only screen and (min-width:768px) {
 	.intro-header .site-heading h1 {
 		font-size: 80px
@@ -1046,25 +875,9 @@ input::-webkit-input-placeholder {
 	margin-bottom: 24px
 }
 
-.intro-header .post-heading .meta {
-	line-height: 1.1;
-	display: block
-}
-
-.intro-header .post-heading .meta {
-	font-family: 'Lora','Times New Roman',serif;
-	font-style: italic;
-	font-weight: 300;
-	font-size: 18px
-}
-
 @media only screen and (min-width:768px) {
 	.intro-header .post-heading h1 {
 		font-size: 45px
-	}
-
-	.intro-header .post-heading .meta {
-		font-size: 20px
 	}
 }
 
@@ -1310,19 +1123,19 @@ code {
 	font-size: 100%
 }
 
-.article-trigger h2::before {
+article h2::before {
 	font-weight: 600;
 	position: absolute;
 	content: '#';
-	left: -5px;
+	left: -0.6em;
 	color: #337ab7
 }
 
-.article-trigger h3::before {
+article h3::before {
 	font-weight: 500;
 	position: absolute;
 	content: '#';
-	left: 0;
+	left: -0.4em;
 	color: #337ab7
 }
 
@@ -1491,10 +1304,6 @@ code {
 	span.time.mobile_time {
 		display: none!important
 	}
-}
-
-.post-tags a {
-	color: #fff!important
 }
 
 .archive-page {
@@ -1776,21 +1585,6 @@ code {
 
 #comments .lists-navigator ol li.current a {
 	color: #46466e
-}
-
-.comment-container {
-	position: relative;
-	z-index: 1;
-	color: #5f5f5f;
-	max-width: 1170px;
-	padding: 0 15px 0 15px;
-	margin: 0 auto
-}
-
-#comments {
-	max-width: 1170px;
-	margin: 0 auto;
-	padding: 0 20px
 }
 
 #comments .page-navigator {
