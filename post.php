@@ -5,12 +5,10 @@ $this->need('nav.php');
 $this->need('header-post.php');
 ?>
 
-<div id="no-ad"></div>
-<!-- content start -->
 <div class="mdui-container blog-content">
     <div class="mdui-row">
         <div class="mdui-col-xs-12">
-            <article class="blog-article">
+            <article class="blog-article" id="post-content">
                 <?php $this->content(); ?>
             </article>
         </div>
