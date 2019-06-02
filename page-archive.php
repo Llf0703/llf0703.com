@@ -7,10 +7,21 @@
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 $this->need('head.php');
 $this->need('nav.php');
-$this->need('header-index.php');
 ?>
 
-<div class="container-fluid archive-page clearfix">
+<div id="pjax">
+    <?php $this->header(); ?>
+    <header class="intro-header relate" style="background-image: url('<?php $this->options->backgroundImage(); ?>');">
+        <div class="mdui-container">
+            <div class="site-heading">
+                <h1 class="header-title"><?php $this->options->backgroundText(); ?></h1>
+            </div>
+        </div>
+        <a class="banner-copy" href="https://www.pixiv.net/member_illust.php?mode=medium&illust_id=53788580"
+            target="_blank">&copy;NIK / Pixiv.net</a>
+    </header>
+
+<div class="mdui-container archive-page">
 	<?php
     $stat = Typecho_Widget::widget('Widget_Stat');
     $this->widget('Widget_Contents_Post_Recent', 'pageSize='.$stat->publishedPostsNum)->to($archives);
@@ -21,16 +32,16 @@ $this->need('header-index.php');
         $mon_tmp = date('m',$archives->created);
         $y=$year; $m=$mon;
         if ($year > $year_tmp || $mon > $mon_tmp) {
-            $output .= '</div></div>';
+            $output .= '</div>';
         }
         if ($year != $year_tmp || $mon != $mon_tmp) {
 			 $year = $year_tmp;
 			 $mon = $mon_tmp;
-			 $output .= '<div class="categorys-title">'.date('M Y',$archives->created).'</div><div class="post-lists"><div class="post-lists-body">';
+			 $output .= '<h2 class="categorys-title">'.date('M Y',$archives->created).'</h2><div class="post-lists">';
         }
-        $output .= '<div class="post-list-item"><div class="post-list-item-container"><div class="item-label"><div class="item-title"><a href="'.$archives->permalink .'">'. $archives->title .'</a></div><div class="item-meta clearfix"><div class="item-meta-date"> '.date('M j, Y',$archives->created).' </div></div></div></div></div>';
+        $output .= '<div class="post-list-item"><div class="post-list-item-container mdui-hoverable mdui-shadow-1"><div class="item-label"><div class="item-title"><a href="'.$archives->permalink .'">'. $archives->title .'</a></div><div class="item-meta"><div class="item-meta-date"> '.date('M j, Y',$archives->created).' </div></div></div></div></div>';
     }
-    $output .= '</div></div></div>';
+    $output .= '</div></div>';
     echo $output;
     ?>
 </div>

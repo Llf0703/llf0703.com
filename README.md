@@ -1,14 +1,15 @@
-# My Typecho Theme
+# llf0703.com
 
-**基于[typecho-theme-amaze](https://github.com/spiritree/typecho-theme-amaze)修改**
+为[Typecho](http://typecho.org)开发的主题
 
-## New Feature
+为个人使用版，很多内容直接写死，今后可能会考虑开发成主题。
 
-1. **全站pjax支持**
-2. 更改整体代码框架
+## Feature
+
+1. 基于[MDUI](https://www.mdui.org/)
+2. 全站pjax支持
 3. 支持洛谷题目难度标签
 4. hljs代码高亮换成了tomorrow主题，支持KaTeX数学公式
-5. 大部分css修改，引入mdui并将最终替代amazeui
 
 ## LICENSE
 

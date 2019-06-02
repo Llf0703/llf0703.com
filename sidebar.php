@@ -1,83 +1,55 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
-<div class="am-u-lg-4 am-u-sm-10 am-u-lg-offset-0 am-u-sm-offset-0 sidebar-container">
-    <section>
-        <div class="sidebar-header">
-            <span class="sidebar-header-title">
-                分类列表
-            </span>
+<div class="mdui-col-md-3 mdui-hidden-sm-down">
+    <div class="mdui-card card-fixed mdui-hoverable">
+        <div class="mdui-card-primary">
+            <div class="mdui-card-primary-title">分类</div>
         </div>
-        <div class="sidebar-list">
-        <ul class="sidebar-list-body sidebar-list-items">
-        <?php $this->widget('Widget_Metas_Category_List')
-        ->parse('<li class="sidebar-list-item"><a href="{permalink}" title="{description}">{name}  ({count})</a></li>'); ?>
+        <ul class="mdui-list mdui-list-dense">
+            <?php $this->widget('Widget_Metas_Category_List')->parse('<a href="{permalink}" title="{description}" class="mdui-list-item mdui-ripple">{name}<span class="tag-right">{count}</span></a>'); ?>
         </ul>
+    </div>
+    <div class="mdui-card card-fixed mdui-hoverable">
+        <div class="mdui-card-primary">
+            <div class="mdui-card-primary-title">标签</div>
         </div>
-    </section>
-    <section>
-        <div class="sidebar-header">
-            <span class="sidebar-header-title">
-                标签列表
-            </span>
-        </div>
-        <div class="tags">
+        <div class="mdui-card-content tag-list">
             <?php $this->widget('Widget_Metas_Tag_Cloud', array('sort' => 'count', 'ignoreZeroCount' => true, 'desc' => true, 'limit' => 50))->to($tags); ?>
             <?php while($tags->next()): ?>
-                <a href="<?php $tags->permalink(); ?>"><?php $tags->name(); ?></a>
+                <a class="tags" href="<?php $tags->permalink(); ?>"><span class="tag name"><?php $tags->name(); ?></span><span class="tag num"><?php $tags->count();?></span></a>
             <?php endwhile; ?>
         </div>
-    </section>
-    <section>
-        <div class="sidebar-header">
-            <span class="sidebar-header-title">
-                归档列表
-            </span>
+    </div>
+    <div class="mdui-card card-fixed mdui-hoverable">
+        <div class="mdui-card-primary">
+            <div class="mdui-card-primary-title">归档</div>
         </div>
-        <div class="sidebar-list">
-        <ul class="sidebar-list-body sidebar-list-items">
-        <?php $this->widget('Widget_Contents_Post_Date', 'type=month&format=F Y')
-            ->parse('<li class="sidebar-list-item"><a href="{permalink}">{date}  ({count})</a></li>'); ?>
+        <ul class="mdui-list mdui-list-dense">
+            <?php $this->widget('Widget_Contents_Post_Date', 'type=month&format=Y年 m月')->parse('<a href="{permalink}" class="mdui-list-item mdui-ripple">{date}<span class="tag-right">{count}</span></a>'); ?>
         </ul>
+    </div>
+    <div class="mdui-card card-fixed mdui-hoverable">
+        <div class="mdui-card-primary">
+            <div class="mdui-card-primary-title">更多</div>
         </div>
-    </section>
-    <section>
-        <div class="sidebar-header">
-            <span class="sidebar-header-title">
-                最新评论
-            </span>
-        </div>
-        <div class="sidebar-list">
-        <ul class="sidebar-list-body sidebar-list-items">
-        <?php $this->widget('Widget_Comments_Recent')->to($comments); $cnt=1;?>
-        <?php while($comments->next() && $cnt<=5): ?>
-            <li class="sidebar-list-item"><a href="<?php $comments->permalink(); ?>"><?php $comments->author(false); ?> : <?php $comments->excerpt(35, '...'); ?><br> —— in [<?php $comments->title();?>]</a></li>
-            <?php $cnt=$cnt+1; ?>
-        <?php endwhile; ?>
+        <ul class="mdui-list mdui-list-dense">
+            <a href="/admin" target="_blank" class="mdui-list-item mdui-ripple">后台管理<span class="tag-right">/admin</span></a>
+            <a href="/feed" target="_blank" class="mdui-list-item mdui-ripple">文章RSS<span class="tag-right">/feed</span></a>
         </ul>
+    </div>
+    <div class="mdui-card card-fixed mdui-hoverable">
+        <div class="mdui-card-primary" style="display:flex">
+            <div class="mdui-card-primary-title" style="display:flex">友链</div>
+            <button class="mdui-btn mdui-color-theme-accent mdui-ripple mdui-btn-dense" style="display: flex;margin-left: auto;">申请友链</button>
         </div>
-    </section>
-    <section>
-        <div class="sidebar-header">
-            <span class="sidebar-header-title">
-                友链
-            </span>
-        </div>
-        <div class="sidebar-list">
-        <ul class="sidebar-list-body sidebar-list-items">
-            <li class="sidebar-list-item"><a href="https://www.cnblogs.com/alessandro/" target="_blank">曾经JX的希望-CYC大佬</a></li>
-            <li class="sidebar-list-item"><a href="https://duanyll.com/" target="_blank">CW的未来-DYL大佬</a></li>
-<li class="sidebar-list-item"><a href="https://www.cnblogs.com/terrasse" target="_blank">现在JX的希望-WZX大佬</a></li>
-<li class="sidebar-list-item"><a href="https://www.cnblogs.com/pelom" target="_blank">OI游戏都吊打我的-ZYT大佬</a></li>
-<li class="sidebar-list-item"><a href="https://www.cnblogs.com/ofnoname" target="_blank">OI和ChO都很强的-LJQ大佬</a></li>
-            <li class="sidebar-list-item"><a href="http://castersoft.com/" target="_blank">Castersoft Games</a></li>
+        <ul class="mdui-list mdui-list-dense">
+            <a href="https://duanyll.com" target="_blank" class="mdui-list-item mdui-ripple">Duanyll<span class="tag-right">duanyll.com</span></a>
+            <a href="https://www.cnblogs.com/terrasse" target="_blank" class="mdui-list-item mdui-ripple">Terrasse<span class="tag-right">cnblogs.com/terrasse</span></a>
+            <a href="https://www.cnblogs.com/pelom" target="_blank" class="mdui-list-item mdui-ripple">Pelom<span class="tag-right">cnblogs.com/pelom</span></a>
+            <a href="https://www.cnblogs.com/alessandro/" target="_blank" class="mdui-list-item mdui-ripple">CYC<span class="tag-right">cnblogs.com/alessandro/</span></a>
+            <a href="http://castersoft.com/" target="_blank" class="mdui-list-item mdui-ripple">Castersoft Games<span class="tag-right">castersoft.com</span></a>
         </ul>
-        </div>
-    </section>
-    <section>
-        <div class="sidebar-header">
-            <span class="sidebar-header-title">
-                广告
-            </span>
-        </div>
+    </div>
+    <div class="mdui-card card-fixed mdui-hoverable">
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         <ins class="adsbygoogle"
             style="display:block"
@@ -88,5 +60,5 @@
         <script>
             (adsbygoogle = window.adsbygoogle || []).push({});
         </script>
-    </section>
+    </div>
 </div>

@@ -1,133 +1,95 @@
-<?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
-
-<?php
-function threadedComments($comments, $options) {
-    $commentClass = '';
-    if ($comments->authorId) {
-        if ($comments->authorId == $comments->ownerId) {
-            $commentClass .= ' comment-by-author';
-        } else {
-            $commentClass .= ' comment-by-user';
-        }
-    }
-    $commentLevelClass = $comments->levels > 0 ? ' comment-child' : ' comment-parent';
-    $depth = $comments->levels +1;
-    if ($comments->url) {
-        $author = '<a href="' . $comments->url . '"target="_blank"' . ' rel="external nofollow">' . $comments->author . '</a>';
+<?php function threadedComments($comments, $options) {
+  $commentClass = '';
+  if ($comments->authorId) {
+    if ($comments->authorId == $comments->ownerId) {
+      $commentClass .= ' comment-by-author';
     } else {
-        $author = $comments->author;
+      $commentClass .= ' comment-by-user';
     }
+  }
+  $commentLevelClass = $comments->levels > 0 ? ' comment-child' : ' comment-parent';
 ?>
-
-<li id="li-<?php $comments->theId(); ?>" class="comment-body<?php
-if ($depth > 1 && $depth < 3) {
-    echo ' comment-child ';
-    $comments->levelsAlt('comment-level-odd', ' comment-level-even');
-}
-else if( $depth > 2){
-    echo ' comment-child2';
-    $comments->levelsAlt(' comment-level-odd', ' comment-level-even');
-}
-else {
-    echo ' comment-parent';
-}
-$comments->alt(' comment-odd', ' comment-even');
-?>">
-    <div id="<?php $comments->theId(); ?>">
-        <?php
-            $host = 'https://secure.gravatar.com';
-            $url = '/avatar/';
-            $size = '80';
-            $default = 'mm';
-            $rating = Helper::options()->commentsAvatarRating;
-            $hash = md5(strtolower($comments->mail));
-            $avatar = $host . $url . $hash . '?s=' . $size . '&r=' . $rating . '&d=' . $default;
-        ?>
-        <div class="comment-view" onclick="">
-            <div class="comment-header">
-                <img class="avatar" src="<?php echo $avatar ?>" width="<?php echo $size ?>" height="<?php echo $size ?>" />
-                <span class="comment-author<?php echo $commentClass; ?>"><?php echo $author; ?></span>
+<div class="card-spacer"></div>
+<div id="<?php $comments->theId(); ?>"
+    class="mdui-card mdui-shadow-3<?php if ($comments->levels > 0) { echo ' comment-child'; $comments->levelsAlt(' comment-level-odd', ' comment-level-even'); } else { echo ' comment-parent'; } $comments->alt(' comment-odd', ' comment-even'); echo $commentClass; ?>">
+    <div class="mdui-card-header">
+        <div class="mdui-card-header-avatar"><?php $comments->gravatar('40', ''); ?></div>
+        <div class="mdui-card-header-title mdui-text-color-theme-accent" id="comment-name"><?php $comments->author(); ?></div>
+        <div class="mdui-card-header-subtitle"><?php $comments->date('Y-m-d H:i'); ?></div>
+    </div>
+    <div class="mdui-card-content"><?php $comments->content(); ?></div>
+    <?php $comments->reply('<div class="mdui-card-actions"><button class="mdui-btn mdui-ripple mdui-text-color-theme-accent">回复</button></div>'); ?>
+    <?php if ($comments->children) { ?>
+    <div class="mdui-container">
+        <?php $comments->threadedComments($options); ?>
+    </div>
+    <?php } ?>
+</div>
+<div class="card-spacer"></div>
+<?php } ?>
+<div id="comments">
+    <?php $this->comments()->to($comments); ?>
+    <?php if($this->allow('comment')): ?>
+    <div class="card-spacer"></div>
+    <div id="<?php $this->respondId(); ?>" class="comment mdui-shadow-3">
+        <form method="post" action="<?php $this->commentUrl() ?>" id="comment-form" role="form">
+            <div class="comment-title">
+                <h2>新评论</h2>
             </div>
             <div class="comment-content">
-                <span class="comment-author-at"><?php getCommentAt($comments->coid); ?></span> <?php $comments->content(); ?></p>
-            </div>
-            <div class="comment-meta">
-                <time class="comment-time"><?php $comments->date('M j, Y'); ?></time>
-                <span class="comment-reply"><?php $comments->reply('Reply'); ?></span>
-            </div>
-        </div>
-    </div>
-    <?php if ($comments->children) { ?>
-        <div class="comment-children">
-            <?php $comments->threadedComments($options); ?>
-        </div>
-    <?php } ?>
-</li>
-<?php } ?>
-
-<div id="<?php $this->respondId(); ?>">
-    <div id="comments" class="clearfix">
-        <?php $this->comments()->to($comments); ?>
-        <?php if($this->allow('comment')): ?>
-        <div id="<?php $this->respondId(); ?>" class="respond">
-            <div class="cancel-comment-reply">
-            <?php $comments->cancelReply(); ?>
-            </div>
-        
-            <h3 id="response"><?php _e('添加新评论'); ?></h3>
-            <form method="post" action="<?php $this->commentUrl() ?>" id="comment-form" role="form">
                 <?php if($this->user->hasLogin()): ?>
-                <p><?php _e('登录身份: '); ?><a href="<?php $this->options->profileUrl(); ?>"><?php $this->user->screenName(); ?></a>. <a href="<?php $this->options->logoutUrl(); ?>" title="Logout"><?php _e('退出'); ?> &raquo;</a></p>
+                <div class="mdui-chip mdui-typo">
+                    <span class="mdui-chip-title">登录身份: <a
+                            href="<?php $this->options->profileUrl(); ?>"><?php $this->user->screenName(); ?></a>&nbsp;&nbsp;<a
+                            href="<?php $this->options->logoutUrl(); ?>" title="Logout">退出</a></span>
+                </div>
                 <?php else: ?>
-                <div class="am-g">
-                    <span class="am-u-lg-4 comment-input">
-                        <label for="author" class="required"><?php _e('称呼'); ?></label>
-                        <input type="text" name="author" id="author" class="text" value="<?php $this->remember('author'); ?>" required />
-                    </span>
-                    <span class="am-u-lg-4">
-                        <label for="mail"<?php if ($this->options->commentsRequireMail): ?> class="required"<?php endif; ?>><?php _e('Email'); ?></label>
-                        <input type="email" name="mail" id="mail" class="text" value="<?php $this->remember('mail'); ?>"<?php if ($this->options->commentsRequireMail): ?> required<?php endif; ?> />
-                    </span>
-                    <span class="am-u-lg-4 comment-input">
-                        <label for="url"<?php if ($this->options->commentsRequireURL): ?> class="required"<?php endif; ?>><?php _e('网站'); ?></label>
-                        <input type="url" name="url" id="url" class="text" value="<?php $this->remember('url'); ?>"<?php if ($this->options->commentsRequireURL): ?> required<?php endif; ?> />
-                    </span>
+                <div class="comment-options">
+                <div class="mdui-textfield mdui-textfield-floating-label comment-option">
+                    <i class="mdui-icon material-icons">account_circle</i>
+                    <label class="mdui-textfield-label">称呼</label>
+                    <input name="author" class="mdui-textfield-input" type="text"
+                        value="<?php $this->remember('author'); ?>" required/>
+                    <div class="mdui-textfield-error">称呼不能为空</div>
+                </div>
+                <div class="mdui-textfield mdui-textfield-floating-label comment-option">
+                <i class="mdui-icon material-icons">email</i>
+                    <label class="mdui-textfield-label">Email</label>
+                    <input name="mail" class="mdui-textfield-input" type="email"
+                        value="<?php $this->remember('mail'); ?>" <?php if ($this->options->commentsRequireMail): ?>required<?php endif;?>/>
+                    <div class="mdui-textfield-error">邮箱格式不合法</div>
+                </div>
+                <div class="mdui-textfield mdui-textfield-floating-label comment-option">
+                <i class="mdui-icon material-icons">link</i>
+                    <label class="mdui-textfield-label">网站</label>
+                    <input name="url" class="mdui-textfield-input" type="url"
+                        value="<?php $this->remember('url'); ?>" <?php if ($this->options->commentsRequireURL): ?>required<?php endif;?>>
+                    <div class="mdui-textfield-error">网站格式不合法</div>
+                </div>
                 </div>
                 <?php endif; ?>
-                <p>
-                    <label for="textarea" class="required"><?php _e('内容'); ?></label>
-                    <textarea rows="8" cols="32" name="text" id="textarea" class="textarea" required ><?php $this->remember('text'); ?></textarea>
-                </p>
-                <p>
-                    <button type="submit" class="submit am-btn am-btn-primary"><?php _e('提交评论'); ?></button>
-                </p>
-            </form>
-        </div>
-        <?php else: ?>
-        <h3><?php _e('评论已关闭'); ?></h3>
-        <?php endif; ?>
-
-        <?php if ($comments->have()): ?>
-
-        <?php $comments->listComments(); ?>
-
-        <div class="lists-navigator clearfix">
-            <?php $comments->pageNav('←','→','2','...'); ?>
-        </div>
-
-        <?php endif; ?>
+                <?php $comments->cancelReply('<div class="mdui-chip mdui-typo"><span class="mdui-chip-icon"><i class="mdui-icon material-icons">close</i></span><span class="mdui-chip-title">取消回复</span></div>'); ?>
+                <div class="mdui-textfield mdui-textfield-floating-label" style="width:auto">
+                <i class="mdui-icon material-icons">textsms</i>
+                    <label class="mdui-textfield-label">内容</label>
+                    <textarea name="text" class="mdui-textfield-input" type="text" required><?php $this->remember('text'); ?></textarea>
+                    <div class="mdui-textfield-error">内容不能为空</div>
+                </div>
+            </div>
+            <div class="mdui-card-actions">
+                <p class="mdui-float-left comment-alert"> 第一次提交的评论将在审核后显示。</p>
+                <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent mdui-float-right" type="submit">发表评论</button>
+            </div>
+        </form>
     </div>
-    <div id="ad">
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- after-comment -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-6222039443661594"
-     data-ad-slot="1699951481"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-</div>
+    <div class="card-spacer"></div>
+    <?php else: ?>
+    <div class="mdui-chip mdui-typo">
+        <span class="mdui-chip-icon"><i class="mdui-icon material-icons">close</i></span>
+        <span class="mdui-chip-title">评论已关闭</span>
+    </div>
+    <?php endif; ?>
+    <?php if ($comments->have()): ?>
+    <?php $comments->listComments(); ?>
+    <?php endif; ?>
 </div>
