@@ -13,7 +13,7 @@
             <div class="mdui-card-primary-title">标签</div>
         </div>
         <div class="mdui-card-content tag-list">
-            <?php $this->widget('Widget_Metas_Tag_Cloud', array('sort' => 'count', 'ignoreZeroCount' => true, 'desc' => true, 'limit' => 50))->to($tags); ?>
+            <?php $this->widget('Widget_Metas_Tag_Cloud', array('sort' => 'name', 'ignoreZeroCount' => true, 'desc' => false))->to($tags); ?>
             <?php while($tags->next()): ?>
                 <a class="tags" href="<?php $tags->permalink(); ?>"><span class="tag name"><?php $tags->name(); ?></span><span class="tag num"><?php $tags->count();?></span></a>
             <?php endwhile; ?>
@@ -46,7 +46,7 @@
             <a href="https://www.cnblogs.com/terrasse" target="_blank" class="mdui-list-item mdui-ripple">Terrasse<span class="tag-right">cnblogs.com/terrasse</span></a>
             <a href="https://www.cnblogs.com/pelom" target="_blank" class="mdui-list-item mdui-ripple">Pelom<span class="tag-right">cnblogs.com/pelom</span></a>
             <a href="https://www.cnblogs.com/alessandro/" target="_blank" class="mdui-list-item mdui-ripple">CYC<span class="tag-right">cnblogs.com/alessandro/</span></a>
-            <a href="http://castersoft.com/" target="_blank" class="mdui-list-item mdui-ripple">Castersoft Games<span class="tag-right">castersoft.com</span></a>
+            <a href="https://www.castersoft.com/" target="_blank" class="mdui-list-item mdui-ripple">Castersoft Games<span class="tag-right">castersoft.com</span></a>
         </ul>
     </div>
     <div class="mdui-card card-fixed mdui-hoverable">

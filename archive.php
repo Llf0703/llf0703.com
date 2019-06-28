@@ -31,7 +31,13 @@ $this->need('nav.php');
                         <a class="mdui-card-primary-title title-fixed"
                             href="<?php $this->permalink() ?>"><?php $this->title() ?></a>
                     </div>
-                    <div class="mdui-card-content nokatex"><?php $this->excerpt(200, '...'); ?></div>
+                    <div class="mdui-card-content nokatex">
+                    <?php $all = Typecho_Plugin::export(); if(array_key_exists('Soso', $all['activated'])): ?>
+                        <?php $this->excerpts($this); ?>
+                        <?php else: ?>
+                        <?php $this->excerpt(200, '...'); ?>
+                        <?php endif; ?>
+                    </div>
 
                     <div class="mdui-card-actions">
                         <span class="more">

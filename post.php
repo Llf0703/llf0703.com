@@ -29,7 +29,7 @@ $this->need('nav.php');
     <div class="mdui-container blog-content">
         <div class="mdui-row">
             <div class="mdui-col-md-8 mdui-col-sm-12 mdui-col-offset-md-2">
-                <article class="blog-article" id="post-content">
+                <article class="mdui-typo" id="post-content">
                     <?php $this->content(); ?>
                 </article>
                 <div class="copy">

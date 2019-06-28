@@ -18,6 +18,9 @@
                     <li>
                         <a href="https://2018.llf0703.com/" target="_blank">2018</a>
                     </li>
+                    <li>
+                        <a href="https://www.jxoj.net/" target="_blank">JXOJ</a>
+                    </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li>

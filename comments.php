@@ -9,9 +9,8 @@
   }
   $commentLevelClass = $comments->levels > 0 ? ' comment-child' : ' comment-parent';
 ?>
-<div class="card-spacer"></div>
 <div id="<?php $comments->theId(); ?>"
-    class="mdui-card mdui-shadow-3<?php if ($comments->levels > 0) { echo ' comment-child'; $comments->levelsAlt(' comment-level-odd', ' comment-level-even'); } else { echo ' comment-parent'; } $comments->alt(' comment-odd', ' comment-even'); echo $commentClass; ?>">
+    class="mdui-card comment-shadow<?php if ($comments->levels > 0) { echo ' comment-child'; $comments->levelsAlt(' comment-level-odd', ' comment-level-even'); } else { echo ' comment-parent'; } $comments->alt(' comment-odd', ' comment-even'); echo $commentClass; ?>">
     <div class="mdui-card-header">
         <div class="mdui-card-header-avatar"><?php $comments->gravatar('40', ''); ?></div>
         <div class="mdui-card-header-title mdui-text-color-theme-accent" id="comment-name"><?php $comments->author(); ?></div>
@@ -31,7 +30,7 @@
     <?php $this->comments()->to($comments); ?>
     <?php if($this->allow('comment')): ?>
     <div class="card-spacer"></div>
-    <div id="<?php $this->respondId(); ?>" class="comment mdui-shadow-3">
+    <div id="<?php $this->respondId(); ?>" class="comment comment-shadow">
         <form method="post" action="<?php $this->commentUrl() ?>" id="comment-form" role="form">
             <div class="comment-title">
                 <h2>新评论</h2>
