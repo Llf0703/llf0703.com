@@ -23,8 +23,8 @@ $this->need('nav.php');
                 </div>
             </div>
         </div>
-        <a class="banner-copy" href="https://www.pixiv.net/member_illust.php?mode=medium&illust_id=53788580"
-            target="_blank">&copy;NIK / Pixiv.net</a>
+        <a class="banner-copy" href="https://www.pixiv.net/member_illust.php?mode=medium&illust_id=66094121"
+            target="_blank">&copy;純粋 / Pixiv.net</a>
     </header>
     <div class="mdui-container blog-content">
         <div class="mdui-row">
@@ -44,7 +44,6 @@ $this->need('nav.php');
                     </p>
                 </div>
                 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                <!-- after-post -->
                 <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6222039443661594"
                     data-ad-slot="4381955140" data-ad-format="auto" data-full-width-responsive="true"></ins>
                 <script>
