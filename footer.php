@@ -11,8 +11,8 @@
 <script>renderMathInElement(document.body,{delimiters:[{left: "$$", right: "$$", display: true},{left: "$", right: "$", display: false}],ignoredTags:["script", "noscript", "style", "textarea", "pre", "code"],ignoredClasses:["nokatex"]});</script>
 <div class="mdui-fab-wrapper" mdui-fab="">
     <button class="mdui-fab mdui-ripple mdui-color-theme-accent mdui-fab-hide" id="scrolltop" mdui-tooltip="{content: '返回顶部',position: 'left'}">
-        <i class="mdui-icon material-icons">add</i>
-        <i class="mdui-icon mdui-fab-opened material-icons">keyboard_arrow_up</i>
+        <i class="mdui-icon material-icons">&#xe145;</i>
+        <i class="mdui-icon mdui-fab-opened material-icons">&#xe316;</i>
     </button>
     <div class="mdui-fab-dial" style="height: 0px;">
         <?php if ($this->is('post')) {?>
@@ -20,14 +20,14 @@
             <?php $url=$this->fields->url;?>
             <?php if ($this->category=='sol') {?>
                 <?php if (isset($lg)) {?>
-                    <a href="https://www.luogu.org/problemnew/show/<?php $this->fields->luogu();?>" target="_blank" class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-red" style="transition-delay: 0ms;" mdui-tooltip="{content: '题目链接',position: 'left'}"><i class="mdui-icon material-icons">link</i></a>
+                    <a href="https://www.luogu.org/problemnew/show/<?php $this->fields->luogu();?>" target="_blank" class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-red" style="transition-delay: 0ms;" mdui-tooltip="{content: '题目链接',position: 'left'}"><i class="mdui-icon material-icons">&#xe157;</i></a>
                 <?php } elseif (isset($url)) { ?>
-                    <a href="<?php $this->fields->url();?>" target="_blank" class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-red" style="transition-delay: 0ms;" mdui-tooltip="{content: '题目链接',position: 'left'}"><i class="mdui-icon material-icons">link</i></a>
+                    <a href="<?php $this->fields->url();?>" target="_blank" class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-red" style="transition-delay: 0ms;" mdui-tooltip="{content: '题目链接',position: 'left'}"><i class="mdui-icon material-icons">&#xe157;</i></a>
                 <?php }?>
             <?php }?>
-            <a href="<?php $this->options->adminUrl(); ?>write-post.php?cid=<?php $this->cid();?>" class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-blue" style="transition-delay: 15ms;" mdui-tooltip="{content: '编辑文章',position: 'left'}"><i class="mdui-icon material-icons">edit</i></a>
+            <a href="<?php $this->options->adminUrl(); ?>write-post.php?cid=<?php $this->cid();?>" class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-blue" style="transition-delay: 15ms;" mdui-tooltip="{content: '编辑文章',position: 'left'}"><i class="mdui-icon material-icons">&#xe3c9;</i></a>
         <?php } elseif ($this->is('index')) { ?>
-            <a href="<?php $this->options->adminUrl();?>" target="_blank" class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-blue" style="transition-delay: 0ms;" mdui-tooltip="{content: '后台管理',position: 'left'}"><i class="mdui-icon material-icons">near_me</i></a>
+            <a href="<?php $this->options->adminUrl();?>" target="_blank" class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-blue" style="transition-delay: 0ms;" mdui-tooltip="{content: '后台管理',position: 'left'}"><i class="mdui-icon material-icons">&#xe569;</i></a>
         <?php }?>
     </div>
 </div>

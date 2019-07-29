@@ -45,21 +45,21 @@
                 <?php else: ?>
                 <div class="comment-options">
                 <div class="mdui-textfield mdui-textfield-floating-label comment-option">
-                    <i class="mdui-icon material-icons">account_circle</i>
+                    <i class="mdui-icon material-icons">&#xe853;</i>
                     <label class="mdui-textfield-label">称呼</label>
                     <input name="author" class="mdui-textfield-input" type="text"
                         value="<?php $this->remember('author'); ?>" required/>
                     <div class="mdui-textfield-error">称呼不能为空</div>
                 </div>
                 <div class="mdui-textfield mdui-textfield-floating-label comment-option">
-                <i class="mdui-icon material-icons">email</i>
+                    <i class="mdui-icon material-icons">&#xe0be;</i>
                     <label class="mdui-textfield-label">Email</label>
                     <input name="mail" class="mdui-textfield-input" type="email"
                         value="<?php $this->remember('mail'); ?>" <?php if ($this->options->commentsRequireMail): ?>required<?php endif;?>/>
                     <div class="mdui-textfield-error">邮箱格式不合法</div>
                 </div>
                 <div class="mdui-textfield mdui-textfield-floating-label comment-option">
-                <i class="mdui-icon material-icons">link</i>
+                    <i class="mdui-icon material-icons">&#xe157;</i>
                     <label class="mdui-textfield-label">网站</label>
                     <input name="url" class="mdui-textfield-input" type="url"
                         value="<?php $this->remember('url'); ?>" <?php if ($this->options->commentsRequireURL): ?>required<?php endif;?>>
@@ -67,9 +67,9 @@
                 </div>
                 </div>
                 <?php endif; ?>
-                <?php $comments->cancelReply('<div class="mdui-chip mdui-typo"><span class="mdui-chip-icon"><i class="mdui-icon material-icons">close</i></span><span class="mdui-chip-title">取消回复</span></div>'); ?>
+                <?php $comments->cancelReply('<div class="mdui-chip mdui-typo"><span class="mdui-chip-icon"><i class="mdui-icon material-icons">&#xe5cd;</i></span><span class="mdui-chip-title">取消回复</span></div>'); ?>
                 <div class="mdui-textfield mdui-textfield-floating-label" style="width:auto">
-                <i class="mdui-icon material-icons">textsms</i>
+                    <i class="mdui-icon material-icons">&#xe0d8;</i>
                     <label class="mdui-textfield-label">内容</label>
                     <textarea name="text" class="mdui-textfield-input" type="text" required><?php $this->remember('text'); ?></textarea>
                     <div class="mdui-textfield-error">内容不能为空</div>
@@ -84,7 +84,7 @@
     <div class="card-spacer"></div>
     <?php else: ?>
     <div class="mdui-chip mdui-typo">
-        <span class="mdui-chip-icon"><i class="mdui-icon material-icons">close</i></span>
+        <span class="mdui-chip-icon"><i class="mdui-icon material-icons">&#xe5cd;</i></span>
         <span class="mdui-chip-title">评论已关闭</span>
     </div>
     <?php endif; ?>

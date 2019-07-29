@@ -11,15 +11,10 @@ $this->need('nav.php');
                 <h1 class="header-title mdui-center">
                     <?php $this->title() ?>
                 </h1>
-                <div class="header-more mdui-center"><i class="mdui-icon material-icons index-icon">access_time</i>
-                    <time datetime="<?php $this->date('c'); ?>"
-                        itemprop="datePublished"><?php $this->date('Y-m-d'); ?></time> &nbsp;&nbsp;
-                    <i class="mdui-icon material-icons index-icon">bookmark</i> <?php $this->category('  '); ?>
-                    &nbsp;&nbsp;
-                    <a href="<?php $this->permalink() ?>#comments"><i
-                            class="mdui-icon material-icons index-icon">comment</i>
-                        <?php $this->commentsNum('%d 条评论'); ?></a>
-                    &nbsp;&nbsp; <?php if ($this->category=='sol'):?><?php $this->need('luogu.php')?><?php endif;?>
+                <div class="header-more mdui-center">
+                    <i class="mdui-icon material-icons index-icon">&#xe192;</i> <time datetime="<?php $this->date('c'); ?>" itemprop="datePublished"><?php $this->date('Y-m-d'); ?></time> &nbsp;&nbsp;
+                    <i class="mdui-icon material-icons index-icon">&#xe866;</i> <?php $this->category('  '); ?> &nbsp;&nbsp;
+                    <a href="<?php $this->permalink() ?>#comments"><i class="mdui-icon material-icons index-icon">&#xe0b9;</i> <?php $this->commentsNum('%d 条评论'); ?></a>
                 </div>
             </div>
         </div>
@@ -43,12 +38,6 @@ $this->need('nav.php');
                         <strong>本文链接：</strong><a href="<?php $this->permalink() ?>"><?php $this->permalink() ?></a>
                     </p>
                 </div>
-                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6222039443661594"
-                    data-ad-slot="4381955140" data-ad-format="auto" data-full-width-responsive="true"></ins>
-                <script>
-                    (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
             </div>
             <div class="mdui-col-md-2 mdui-hidden-sm-down sticky">
                 <div id="toc"></div>
