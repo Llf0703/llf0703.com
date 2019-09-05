@@ -76,7 +76,7 @@
                 </div>
             </div>
             <div class="mdui-card-actions">
-                <p class="mdui-float-left comment-alert"> 第一次提交的评论将在审核后显示。</p>
+                <!--<p class="mdui-float-left comment-alert"> 第一次提交的评论将在审核后显示。</p>-->
                 <button class="mdui-btn mdui-btn-raised mdui-ripple mdui-color-theme-accent mdui-float-right" type="submit">发表评论</button>
             </div>
         </form>

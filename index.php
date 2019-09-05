@@ -15,7 +15,7 @@ $this->need('nav.php');
             target="_blank">&copy;純粋 / Pixiv.net</a>
     </header>
     <div class="mdui-container">
-        <div class="mdui-row card-first">
+        <div class="mdui-row">
             <div class="mdui-col-md-9 mdui-col-sm-12">
                 <?php while($this->next()): ?>
                 <?php $this->need('post-list.php'); ?>
@@ -29,12 +29,7 @@ $this->need('nav.php');
                     </script>
                 </div>
                 <div class="page-nav">
-                    <div class="prev-page mdui-col-xs-6">
-                        <?php $this->pageLink('<button class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon material-icons">&#xe5c4;</i></button>'); ?>
-                    </div>
-                    <div class="next-page mdui-col-xs-6">
-                        <?php $this->pageLink('<button class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon material-icons">&#xe5c8;</i></button>', 'next'); ?>
-                    </div>
+                    <?php $this->pageNav('<span><i class="mdui-icon material-icons">&#xe5c4;</i></span>', '<span><i class="mdui-icon material-icons">&#xe5c8;</i></span>', 1, '...', 'wrapClass=pager&prevClass=prev&nextClass=next'); ?>
                 </div>
             </div>
             <?php $this->need('sidebar.php'); ?>

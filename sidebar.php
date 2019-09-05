@@ -39,7 +39,7 @@
     <div class="mdui-card card-fixed mdui-hoverable">
         <div class="mdui-card-primary" style="display:flex">
             <div class="mdui-card-primary-title" style="display:flex">友链</div>
-            <button class="mdui-btn mdui-color-theme-accent mdui-ripple mdui-btn-dense" style="display: flex;margin-left: auto;">申请友链</button>
+            <a class="mdui-btn mdui-color-theme-accent mdui-ripple mdui-btn-dense" style="display: flex;margin-left: auto;" href="mailto:llf0703@llf0703.com">申请友链</a>
         </div>
         <ul class="mdui-list mdui-list-dense">
             <a href="https://duanyll.com" target="_blank" class="mdui-list-item mdui-ripple">Duanyll<span class="tag-right">duanyll.com</span></a>

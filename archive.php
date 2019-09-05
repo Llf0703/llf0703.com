@@ -10,10 +10,10 @@ $this->need('nav.php');
             <div class="post-heading">
                 <h1 class="header-title">
                     <?php $this->archiveTitle(array(
-                'category'  =>  _t('分类-%s'),
-                'search'    =>  _t('搜索-%s'),
-                'tag'       =>  _t('标签-%s'),
-                'author'    =>  _t('作者-%s')
+                'category'  =>  _t('分类：%s'),
+                'search'    =>  _t('搜索：%s'),
+                'tag'       =>  _t('标签：%s'),
+                'author'    =>  _t('作者：%s')
                 ), '', ''); ?>
                 </h1>
             </div>
@@ -37,12 +37,7 @@ $this->need('nav.php');
                 </div>
                 <?php endif; ?>
                 <div class="page-nav">
-                    <div class="prev-page mdui-col-xs-6">
-                        <?php $this->pageLink('<button class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon material-icons">&#xe5c4;</i></button>'); ?>
-                    </div>
-                    <div class="next-page mdui-col-xs-6">
-                        <?php $this->pageLink('<button class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon material-icons">&#xe5c8;</i></button>', 'next'); ?>
-                    </div>
+                    <?php $this->pageNav('<span><i class="mdui-icon material-icons">&#xe5c4;</i></span>', '<span><i class="mdui-icon material-icons">&#xe5c8;</i></span>', 1, '...', 'wrapClass=pager&prevClass=prev&nextClass=next'); ?>
                 </div>
             </div>
             <?php $this->need('sidebar.php'); ?>

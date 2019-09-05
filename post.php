@@ -11,11 +11,11 @@ $this->need('nav.php');
                 <h1 class="header-title mdui-center">
                     <?php $this->title() ?>
                 </h1>
-                <div class="header-more mdui-center">
-                    <i class="mdui-icon material-icons index-icon">&#xe192;</i> <time datetime="<?php $this->date('c'); ?>" itemprop="datePublished"><?php $this->date('Y-m-d'); ?></time> &nbsp;&nbsp;
-                    <i class="mdui-icon material-icons index-icon">&#xe866;</i> <?php $this->category('  '); ?> &nbsp;&nbsp;
-                    <a href="<?php $this->permalink() ?>#comments"><i class="mdui-icon material-icons index-icon">&#xe0b9;</i> <?php $this->commentsNum('%d 条评论'); ?></a>
-                    &nbsp;&nbsp; <?php if ($this->category=='sol'):?><?php $this->need('luogu.php')?><?php endif;?>
+                <div class="mdui-center">
+                    <span class="badge mdui-color-indigo-accent"><i class="mdui-icon material-icons index-icon">&#xe192;</i> <time datetime="<?php $this->date('c'); ?>" itemprop="datePublished"><?php $this->date('Y-m-d'); ?></time></span>
+                    <?php if (isset($this->category)): ?><span class="badge mdui-color-pink-accent"><i class="mdui-icon material-icons index-icon">&#xe149;</i> <?php $this->category('  '); ?></span><?php endif; ?>
+                    <?php if (count($this->tags)): ?><span class="badge mdui-color-blue-accent"><i class="mdui-icon material-icons index-icon">&#xe866;</i><?php $this->tags('</span> <span class="badge mdui-color-blue-accent"><i class="mdui-icon material-icons index-icon">&#xe866;</i>', true, 'none'); ?></span><?php endif; ?>
+                    <?php if ($this->category=='sol'):?><?php $this->need('luogu.php')?><?php endif;?>
                 </div>
             </div>
         </div>
@@ -25,6 +25,18 @@ $this->need('nav.php');
     <div class="mdui-container blog-content">
         <div class="mdui-row">
             <div class="mdui-col-md-8 mdui-col-sm-12 mdui-col-offset-md-2">
+                <div style="margin-bottom: 2em">
+                    <?php $lg=$this->fields->luogu;?>
+                    <?php $url=$this->fields->url;?>
+                    <?php if ($this->category=='sol') {?>
+                        <?php if (isset($lg)) {?>
+                            <a href="https://www.luogu.org/problem/<?php $this->fields->luogu();?>" target="_blank" class="mdui-btn mdui-btn-dense mdui-color-red-accent mdui-ripple"><i class="mdui-icon material-icons">&#xe157;</i> 题目链接</a>
+                        <?php } elseif (isset($url)) { ?>
+                            <a href="<?php $this->fields->url();?>" target="_blank" class="mdui-btn mdui-btn-dense mdui-color-red-accent mdui-ripple"><i class="mdui-icon material-icons">&#xe157;</i> 题目链接</a>
+                        <?php }?>
+                    <?php }?>
+                    <a href="<?php $this->options->adminUrl(); ?>write-post.php?cid=<?php $this->cid();?>" class="mdui-btn mdui-btn-dense mdui-color-blue-accent mdui-ripple"><i class="mdui-icon material-icons">&#xe3c9;</i> 编辑文章</a>
+                </div>
                 <article class="mdui-typo" id="post-content">
                     <?php $this->content(); ?>
                 </article>
